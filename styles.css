@@ -52,7 +52,8 @@ h3 { font-size: 1.5rem; }
 .header-inner { max-width: var(--maxw); margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; }
 .logo-mark { display: inline-flex; width: 38px; height: 38px; border-radius: 50%; background: var(--primary); color: #000; align-items: center; justify-content: center; font-size: 0.85rem; letter-spacing: 0.05em; }
-.logo-text { font-size: 1.05rem; }
+.logo-text { font-size: 1.05rem;color: rgb(23, 115, 177) }
+.logo-text2 { font-size: 1.05rem;color:rgb(208, 6, 5) }
 .nav { display: flex; gap: 28px; }
 .nav a { font-size: 0.95rem; color: var(--text); opacity: .85; transition: opacity .2s, color .2s; position: relative; }
 .nav a:hover { opacity: 1; color: var(--primary); }
