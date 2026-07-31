@@ -297,143 +297,129 @@ span{ color: var(--primary); }
   * { animation: none !important; }
 }
 
-/* ---------- BRAND ---------- */
+/* ---------- BRAND MARQUEE ---------- */
 
- .brand-section {
-    position: relative;
-    padding: 80px 0 60px;
-    overflow: hidden;
-    background-color: #0a0f1a;
-    background-image:
-      linear-gradient(90deg, transparent 0%, transparent 49.5%, #1a2a3a 49.5%, #1a2a3a 50.5%, transparent 50.5%, transparent 100%),
-      linear-gradient(0deg, transparent 0%, transparent 49.5%, #1a2a3a 49.5%, #1a2a3a 50.5%, transparent 50.5%, transparent 100%);
-    background-size: 80px 80px;
+.brand-wrapper {
+  position: relative;
+  padding: 80px 0;
+  background: var(--bg); /* Matches site background */
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Optional: Subtle gradient fade on edges for a premium look */
+.brand-wrapper::before,
+.brand-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brand-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.brand-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px; /* Space between row 1 and 2 */
+  display: flex;
+}
+
+.marquee-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content; /* Ensures track is as wide as its content */
+  will-change: transform; /* Performance optimization */
+}
+
+/* Pause animation on hover for better UX */
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.brand-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 30px; /* Spacing between brands */
+  white-space: nowrap;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Responsive font size */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+/* Color Variations */
+.brand-name.bright {
+  color: var(--text);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.brand-name.dim {
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+.separator {
+  color: var(--primary);
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* --- Animations --- */
+
+/* Row 1: Moves Left */
+.row-1 .marquee-track {
+  animation: scroll-left 30s linear infinite;
+}
+
+/* Row 2: Moves Right */
+.row-2 .marquee-track {
+  animation: scroll-right 35s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .brand-wrapper {
+    padding: 40px 0;
   }
-
-  .brand-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(30, 80, 120, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(30, 80, 120, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  /* ─ Header Area ── */
-  .brand-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0 40px;
-    margin-bottom: 50px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .brand-header-left .label {
-    color: #00d4ff;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .brand-header-left h2 {
-    font-size: 42px;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 1.15;
-    max-width: 500px;
-  }
-
-  .brand-header-right {
-    text-align: right;
-    color: #7a8a9a;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    line-height: 1.8;
-    padding-top: 30px;
-  }
-
-  /* ── Marquee Container ── */
-  .marquee-wrapper {
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    padding: 10px 0;
-  }
-
-  /* Pause animation on hover for any row */
-  .marquee-wrapper:hover .marquee-track {
-    animation-play-state: paused;
-  }
-
-  .marquee-track {
-    display: flex;
-    width: max-content;
-  }
-
-  /* Row 1: Moves Left */
-  .row-1 .marquee-track {
-    animation: scroll-left 20s linear infinite;
-  }
-
-  /* Row 2: Moves Right */
-  .row-2 .marquee-track {
-    animation: scroll-right 25s linear infinite;
-  }
-
-  .marquee-track .brand-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0 30px;
-    white-space: nowrap;
-  }
-
-  .marquee-track .brand-item .brand-name {
-    font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  .marquee-track .brand-item .brand-name.bright {
-    color: #ffffff;
-  }
-
-  .marquee-track .brand-item .brand-name.dim {
-    color: #3a4a5a;
-  }
-
-  .marquee-track .brand-item .separator {
-    color: #00d4ff;
-    font-size: 14px;
-  }
-
-  /* ── Keyframes ── */
   
-  /* Standard Left Scroll */
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  .brand-item {
+    padding: 0 15px;
   }
-
-  /* New Right Scroll */
-  @keyframes scroll-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
+  
+  .brand-name {
+    font-size: 1.2rem;
   }
-
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
-    .brand-header {
-      flex-direction: column;
-      gap: 20px;
-      padding: 0 20px;
-    }
-    .brand-header-left h2 { font-size: 28px; }
-    .marquee-track .brand-item .brand-name { font-size: 22px; }
-    .marquee-track .brand-item { padding: 0 15px; gap: 12px; }
-  }
+}
