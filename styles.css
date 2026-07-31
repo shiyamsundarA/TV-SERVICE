@@ -52,8 +52,7 @@ h3 { font-size: 1.5rem; }
 .header-inner { max-width: var(--maxw); margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; }
 .logo-mark { display: inline-flex; width: 38px; height: 38px; border-radius: 50%; background: var(--primary); color: #000; align-items: center; justify-content: center; font-size: 0.85rem; letter-spacing: 0.05em; }
-.logo-text { font-size: 1.05rem;color: rgb(23, 115, 177) }
-.logo-text2 { font-size: 1.05rem;color:rgb(208, 6, 5) }
+.logo-text { font-size: 1.05rem;color: rgb(251, 251, 251) }
 .nav { display: flex; gap: 28px; }
 .nav a { font-size: 0.95rem; color: var(--text); opacity: .85; transition: opacity .2s, color .2s; position: relative; }
 .nav a:hover { opacity: 1; color: var(--primary); }
@@ -297,3 +296,144 @@ span{ color: var(--primary); }
   .hero { background: linear-gradient(135deg, #17171d, #0b0b0f); }
   * { animation: none !important; }
 }
+
+/* ---------- BRAND ---------- */
+
+ .brand-section {
+    position: relative;
+    padding: 80px 0 60px;
+    overflow: hidden;
+    background-color: #0a0f1a;
+    background-image:
+      linear-gradient(90deg, transparent 0%, transparent 49.5%, #1a2a3a 49.5%, #1a2a3a 50.5%, transparent 50.5%, transparent 100%),
+      linear-gradient(0deg, transparent 0%, transparent 49.5%, #1a2a3a 49.5%, #1a2a3a 50.5%, transparent 50.5%, transparent 100%);
+    background-size: 80px 80px;
+  }
+
+  .brand-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(30, 80, 120, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(30, 80, 120, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* ─ Header Area ── */
+  .brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 40px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .brand-header-left .label {
+    color: #00d4ff;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .brand-header-left h2 {
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.15;
+    max-width: 500px;
+  }
+
+  .brand-header-right {
+    text-align: right;
+    color: #7a8a9a;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+    padding-top: 30px;
+  }
+
+  /* ── Marquee Container ── */
+  .marquee-wrapper {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  /* Pause animation on hover for any row */
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+  }
+
+  /* Row 1: Moves Left */
+  .row-1 .marquee-track {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  /* Row 2: Moves Right */
+  .row-2 .marquee-track {
+    animation: scroll-right 25s linear infinite;
+  }
+
+  .marquee-track .brand-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 30px;
+    white-space: nowrap;
+  }
+
+  .marquee-track .brand-item .brand-name {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .marquee-track .brand-item .brand-name.bright {
+    color: #ffffff;
+  }
+
+  .marquee-track .brand-item .brand-name.dim {
+    color: #3a4a5a;
+  }
+
+  .marquee-track .brand-item .separator {
+    color: #00d4ff;
+    font-size: 14px;
+  }
+
+  /* ── Keyframes ── */
+  
+  /* Standard Left Scroll */
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* New Right Scroll */
+  @keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .brand-header {
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    .brand-header-left h2 { font-size: 28px; }
+    .marquee-track .brand-item .brand-name { font-size: 22px; }
+    .marquee-track .brand-item { padding: 0 15px; gap: 12px; }
+  }
