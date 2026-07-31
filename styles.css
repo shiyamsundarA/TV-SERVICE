@@ -217,7 +217,7 @@ h3 { font-size: 1.5rem; }
 
 /* Color Variations */
 .brand-name.bright {
-  color: #FFD700;
+  color: var(--primary);
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 .brand-name.dim {
@@ -225,14 +225,14 @@ h3 { font-size: 1.5rem; }
   opacity: 0.5;
 }
 .separator {
-  color: #C9A227; /* Dark Gold */
+  color: var(--primary); /* Dark Gold */
   margin: 0 18px;
   font-size: 14px;
 }
 
 /* Hover Effect */
 .brand-item:hover .brand-name { color: #FFFFFF; }
-.brand-item:hover .separator { color: #FFD700; }
+.brand-item:hover .separator { color: var(--primary); }
 
 /* Animations */
 .row-1 .marquee-track { animation: scroll-left 30s linear infinite; }
