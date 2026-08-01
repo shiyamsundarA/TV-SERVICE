@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enquire Now | TV Service Center — Expert TV Repair</title>
+<meta name="description" content="Book a TV repair, wall mounting, or home theater service. Fill in your details and we'll call you back within 30 minutes." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="site-header" class="header">
+  <div class="header-inner">
+    <a href="index.html#home" class="logo" aria-label="Home">
+      <img src="https://res.cloudinary.com/dxec0lij3/image/upload/v1784879596/bert_dbbknb.png" alt="" width="50" height="44" class="d-inline-block align-text-top">
+      <span class="logo-text">Berts Electronics</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#service">Service</a>
+      <a href="index.html#technicians">Technicians</a>
+      <a href="index.html#review">Review</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="enquire.html">Enquire Now</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="enquiry-hero">
+    <div class="container">
+      <p class="eyebrow reveal">Get In Touch</p>
+      <h1 class="reveal">Book a Repair, We'll Take It From Here</h1>
+      <p class="enquiry-hero-sub reveal">Tell us what's wrong with your TV and our team will call you back within 30 minutes to confirm your slot.</p>
+    </div>
+  </section>
+
+  <section class="section enquiry-section">
+    <div class="container enquiry-grid">
+
+      <!-- Trust panel -->
+      <div class="enquiry-info reveal">
+        <h3>What happens next</h3>
+        <p>No call centers, no waiting on hold — a real technician gets back to you.</p>
+
+        <ul class="enquiry-steps">
+          <li>
+            <span class="step-num">1</span>
+            <div><h4>We review your enquiry</h4><p>Usually within a few minutes during working hours.</p></div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div><h4>We call to confirm</h4><p>We'll lock in a time slot that works for you.</p></div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div><h4>We fix it</h4><p>At your home, or drop it off at our center — your choice.</p></div>
+          </li>
+        </ul>
+
+        <ul class="contact-list enquiry-contact">
+          <li><span>Phone</span><a href="tel:+918903719229">+91 89037 19229</a></li>
+          <li><span>WhatsApp</span><a href="https://wa.me/918903719229" target="_blank" rel="noopener">Message us</a></li>
+          <li><span>Email</span><a href="mailto:electronicsberts@gmail.com">electronicsberts@gmail.com</a></li>
+          <li><span>Hours</span><span>Mon – Sat · 10:00 AM – 10:00 PM</span></li>
+        </ul>
+      </div>
+
+      <!-- Form card -->
+      <div class="enquiry-card reveal" id="enquiryCard">
+        <form id="enquiryForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+              <span class="form-error">Please enter your name</span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required>
+              <span class="form-error">Enter a valid 10-digit number</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="optional">(optional)</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="brand">TV Brand</label>
+              <select id="brand" name="brand">
+                <option value="">Select brand</option>
+                <option>Sony</option>
+                <option>LG</option>
+                <option>Samsung</option>
+                <option>Philips</option>
+                <option>TCL</option>
+                <option>Panasonic</option>
+                <option>Thomson</option>
+                <option>Onida</option>
+                <option>Mi / Xiaomi</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="screenSize">Screen Size <span class="optional">(optional)</span></label>
+              <input type="text" id="screenSize" name="screenSize" placeholder='e.g. 43&quot;'>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="issue">Issue Type</label>
+            <select id="issue" name="issue" required>
+              <option value="">Select the closest match</option>
+              <option>No Power</option>
+              <option>No Display / Picture</option>
+              <option>Screen Cracked or Broken Panel</option>
+              <option>No Sound</option>
+              <option>Smart TV / Software Issue</option>
+              <option>Wall Mounting</option>
+              <option>Home Theater / Speaker Issue</option>
+              <option>Other</option>
+            </select>
+            <span class="form-error">Please select an issue type</span>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Describe the Problem <span class="optional">(optional)</span></label>
+            <textarea id="description" name="description" rows="3" placeholder="Anything that'll help the technician come prepared"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Service Type</label>
+            <div class="toggle-group" id="serviceToggle">
+              <button type="button" class="toggle-btn active" data-value="home">Home Visit</button>
+              <button type="button" class="toggle-btn" data-value="center">Drop at Center</button>
+            </div>
+            <input type="hidden" id="serviceType" name="serviceType" value="home">
+          </div>
+
+          <div class="form-group" id="addressGroup">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="2" placeholder="Where should the technician come?"></textarea>
+            <span class="form-error">Please enter an address for the home visit</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+              <label for="timeSlot">Preferred Time Slot</label>
+              <select id="timeSlot" name="timeSlot">
+                <option value="">Any time</option>
+                <option>Morning (10am – 1pm)</option>
+                <option>Afternoon (1pm – 5pm)</option>
+                <option>Evening (5pm – 10pm)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="photo">Upload a Photo of the Issue <span class="optional">(optional)</span></label>
+            <label class="file-input" for="photo">
+              <span id="fileLabel">Choose a file</span>
+            </label>
+            <input type="file" id="photo" name="photo" accept="image/*" hidden>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>I agree to be contacted about this enquiry</span>
+          </label>
+          <span class="form-error" id="consentError">Please accept to continue</span>
+
+          <button type="submit" class="btn btn-primary enquiry-submit">Submit Enquiry</button>
+        </form>
+
+        <!-- Success state, shown after a valid submit -->
+        <div class="enquiry-success" id="enquirySuccess" hidden>
+          <div class="success-icon">✓</div>
+          <h3>Thanks, we've got it.</h3>
+          <p>Our team will call you within 30 minutes to confirm your slot.</p>
+          <button type="button" class="btn btn-outline" id="resetForm">Submit another enquiry</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h5>About</h5>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#technicians">Our Team</a>
+      <a href="index.html#contact">Contact Us</a>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <a href="index.html#service">LED / LCD Repair</a>
+      <a href="index.html#service">Smart TV Setup</a>
+      <a href="index.html#service">Wall Mounting</a>
+      <a href="index.html#service">Pickup & Delivery</a>
+    </div>
+    <div>
+      <h5>Help</h5>
+      <a href="index.html#contact">Payments</a>
+      <a href="index.html#contact">Warranty</a>
+      <a href="index.html#contact">FAQ</a>
+    </div>
+    <div>
+      <h5>Policies</h5>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Returns</a>
+    </div>
+    <div>
+      <h5>Mail Us</h5>
+      <address>
+        TV Service Center<br/>
+        No 9A/270,<br/>
+        Way to Chottaiyanthoppu, Poopandiyapuram, Arockiapuram, Thoothukudi-628002, Tamil Nadu<br/>
+        +91 89037 19229
+      </address>
+    </div>
+    <div class="footer-selfpromo">
+      <h5>Website by</h5>
+      <p class="studio">Studio Craft</p>
+      <p class="pitch">Want a website for your business? Let's talk.</p>
+      <a href="dbtech2k26@gmail.com" class="btn btn-outline">Contact us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© 2026 TV Service Center. All rights reserved.</span>
+      <span>Made with care in India.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+<script src="./enquire.js"></script>
+</body>
+</html>
